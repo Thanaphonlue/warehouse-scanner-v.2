@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Scanning</title>
+<title>Warehouse Scanner</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -16,64 +16,136 @@
 
 <header class="topbar">
 
-📦 Warehouse Scanner
+    <div class="logo">
+
+        📦 Warehouse Scanner
+
+    </div>
 
 </header>
 
 <main class="container">
 
-<div class="card">
+<div class="card scan-card">
 
 <h1>กำลังสแกนสินค้า</h1>
 
-<p id="product"></p>
+<div class="info-box">
 
-<p id="target"></p>
+    <div class="row">
 
-<hr>
+        <span>สินค้า</span>
 
-<h2 id="progress">
+        <strong id="product">-</strong>
 
-0 / 0
+    </div>
 
-</h2>
+    <div class="row">
 
-<div class="input-group">
+        <span>จำนวนที่ต้องสแกน</span>
 
-<label>Scan Barcode</label>
+        <strong id="target">0</strong>
+
+    </div>
+
+</div>
+
+<div class="progress-area">
+
+<div class="progress-text">
+
+<span id="progress">0 / 0</span>
+
+<span id="remaining">เหลือ 0</span>
+
+</div>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+</div>
+
+<div class="scan-box">
+
+<label>สแกนบาร์โค้ด</label>
 
 <input
 type="text"
 id="barcode"
-placeholder="ยิงบาร์โค้ดที่นี่"
 autocomplete="off"
->
+placeholder="ยิงบาร์โค้ดที่นี่">
 
 </div>
 
-<div id="status">
+<div id="status" class="status success">
 
 พร้อมสแกน
 
 </div>
 
-<hr>
+<h3>
 
-<h3>รายการล่าสุด</h3>
+รายการล่าสุด
 
-<div id="history">
+</h3>
 
-ยังไม่มีข้อมูล
+<div id="lastBarcode">
+
+-
 
 </div>
 
-<br>
+<h3>
+
+ประวัติการสแกน
+
+</h3>
+
+<div class="history">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Barcode</th>
+
+<th>เวลา</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="button-group">
 
 <button id="finishButton">
 
 จบการสแกน
 
 </button>
+
+<button
+onclick="location.href='index.html'">
+
+กลับหน้าหลัก
+
+</button>
+
+</div>
 
 </div>
 
